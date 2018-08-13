@@ -5,7 +5,7 @@ const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
- 
+
 app.prepare()
   .then(() => {
     const server = express()
@@ -20,9 +20,10 @@ app.prepare()
       console.log('ID:', req.params.id)
     })
 
-    server.get('/posts/:id', (req, res) =>{
-      return app.render(req, res, '/posts', { id: req.params.id})
-      console.log('ID:', req.params.id)
+    server.get('/post/:id', (req, res) =>{
+      const actualPage = '/post'
+      const queryParams = { id: req.params.id}
+      return app.render(req, res, actualPage, queryParams)
     })
 
     server.get('*', (req, res) =>{
