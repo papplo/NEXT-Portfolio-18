@@ -9,21 +9,27 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
-    "dev": "next"
+    "dev": "node server.js",
+    "build": "next build",
+    "go": "NODE_ENV=production nodemon server.js"
   },
-
   "keywords": [
     "sanity"
   ],
   "dependencies": {
     "@sanity/base": "^0.132.5",
+    "@sanity/client": "^0.132.5",
     "@sanity/components": "^0.132.5",
     "@sanity/core": "^0.132.5",
     "@sanity/default-layout": "^0.132.5",
     "@sanity/default-login": "^0.132.5",
     "@sanity/desk-tool": "^0.132.5",
+    "express": "^4.16.3",
+    "install": "^0.12.1",
+    "isomorphic-unfetch": "^2.1.1",
     "next": "^6.1.1",
-    "prop-types": "^15.6",
+    "npm": "^6.3.0",
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },
