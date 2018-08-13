@@ -16,8 +16,6 @@ const Index = (props) => (
   <Layout>
     <h1>This is the title</h1>
     <ul>
-      {console.log(props.posts)}
-
       <PostLink id="ux-ui-design" title="Ux/Ui-design"/>
       <PostLink id="web-development" title="Web Development"/>
       <PostLink id="other-projects" title="Other projects"/>
@@ -26,17 +24,12 @@ const Index = (props) => (
 )
 
 Index.getInitialProps = async function() {
-  const query = '*[_type == "category"]'
+  const res = await fetch('https://pphn0i1g.api.sanity.io/v1/data/query/production?query=*[type=="category"]')
+  const data = await res.json()
+  console.log(data);
 
   return {
-    posts: await sanityClient.fetch(query)
-      .then(category => {
-        console.log('---> fetched: ')
-        category.forEach(catName => {
-          console.log(`${catName.title}`);
-        })
-      })
+    posts: data
   }
 }
-
 export default Index
