@@ -1,5 +1,5 @@
 {
-  "name": "sanity for nextportfolio",
+  "name": "nextportfolio",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -8,7 +8,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
-    "test": "sanity check",
+    "test": "sanity check"
   },
   "keywords": [
     "sanity"
