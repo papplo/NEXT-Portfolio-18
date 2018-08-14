@@ -1,5 +1,5 @@
 {
-  "name": "nextportfolio",
+  "name": "sanity for nextportfolio",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -9,9 +9,6 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
-    "dev": "node server.js",
-    "build": "next build",
-    "go": "NODE_ENV=production nodemon server.js"
   },
   "keywords": [
     "sanity"

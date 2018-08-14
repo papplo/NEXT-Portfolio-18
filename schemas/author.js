@@ -26,6 +26,12 @@ export default {
       }
     },
     {
+      name: 'biolinks',
+      title: 'My Links',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'links'}}]
+    },
+    {
       name: 'bio',
       title: 'Bio',
       type: 'array',
