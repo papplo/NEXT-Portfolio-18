@@ -9,6 +9,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'tagline',
+      title: 'Bold Tagline',
+      type: 'string'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -16,6 +21,11 @@ export default {
         source: 'name',
         maxLength: 96
       }
+    },
+    {
+      name: 'bio',
+      title: 'Bio',
+      type: 'text'
     },
     {
       name: 'image',
@@ -26,21 +36,56 @@ export default {
       }
     },
     {
-      name: 'biolinks',
-      title: 'My Links',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'links'}}]
-    },
-    {
-      name: 'bio',
-      title: 'Bio',
-      type: 'array',
-      of: [
+      type: 'object',
+      name: 'feeds',
+      title: 'My Feeds',
+      fieldsets: [
+        {name: 'social', title: 'Social media handles'}
+      ],
+      fields: [
         {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: []
+          name: 'phone',
+          title: 'Phone',
+          type: 'string',
+          fieldset: 'social'
+        },
+        {
+          name: 'email',
+          title: 'E-mail',
+          type: 'string',
+          fieldset: 'social'
+        },
+        {
+          name: 'linkedin',
+          title: 'LinkedIn',
+          type: 'url',
+          fieldset: 'social'
+        },
+        {
+          name: 'instagram',
+          title: 'Instagram',
+          type: 'url',
+          fieldset: 'social'
+        },
+        {
+          name: 'github',
+          title: 'GitHub',
+          type: 'url',
+          fieldset: 'social'
+        },
+        {
+          name: 'flickr',
+          title: 'Flickr',
+          type: 'url',
+          fieldset: 'social'
+        },
+        {
+          name: 'biolinks',
+          title: 'My Links',
+          type: 'array',
+          of: [
+            {type: 'reference', to: {type: 'links'}}
+          ]
         }
       ]
     }
